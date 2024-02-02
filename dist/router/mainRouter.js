@@ -7,5 +7,8 @@ const express_1 = require("express");
 const pingRouter_1 = __importDefault(require("./pingRouter"));
 const router = (0, express_1.Router)();
 router.use('/ping', pingRouter_1.default);
+router.get('/', (req, res) => {
+    res.render('main.ejs');
+});
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map
