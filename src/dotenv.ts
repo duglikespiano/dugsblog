@@ -1,1 +1,1 @@
-export const port = process.env.SERVER_PORT as unknown as number;
+export const port = process.env.PORT as unknown as number;
