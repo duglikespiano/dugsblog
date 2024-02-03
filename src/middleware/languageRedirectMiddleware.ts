@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 
-export const languageRedirectMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const languageRedirectMiddleware = (req: Request, res: Response) => {
 	const userLanguage = req.headers['accept-language'] ? req.headers['accept-language'].slice(0, 2) : 'en';
 	if (userLanguage.includes('ko')) {
 		res.redirect('/ko');

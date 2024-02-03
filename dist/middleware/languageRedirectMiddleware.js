@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.languageRedirectMiddleware = void 0;
-const languageRedirectMiddleware = (req, res, next) => {
+const languageRedirectMiddleware = (req, res) => {
     const userLanguage = req.headers['accept-language'] ? req.headers['accept-language'].slice(0, 2) : 'en';
     if (userLanguage.includes('ko')) {
         res.redirect('/ko');
