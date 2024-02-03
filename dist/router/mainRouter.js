@@ -15,8 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const promises_1 = __importDefault(require("fs/promises"));
 const pingRouter_1 = __importDefault(require("./pingRouter"));
+const englishRouter_1 = __importDefault(require("./englishRouter"));
+const koreanRouter_1 = __importDefault(require("./koreanRouter"));
+const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
 const router = (0, express_1.Router)();
 router.use('/ping', pingRouter_1.default);
+router.use('/en', englishRouter_1.default);
+router.use('/ko', koreanRouter_1.default);
+router.use('/ja', japaneseRouter_1.default);
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const data = yield promises_1.default.readFile('./public/markdown/dummy.md', 'utf8');
