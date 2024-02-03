@@ -1,38 +1,19 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const promises_1 = __importDefault(require("fs/promises"));
-const marked_1 = __importDefault(require("marked"));
 const pingRouter_1 = __importDefault(require("./pingRouter"));
 const englishRouter_1 = __importDefault(require("./englishRouter"));
 const koreanRouter_1 = __importDefault(require("./koreanRouter"));
 const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
+const languageRedirectMiddleware_1 = require("../middleware/languageRedirectMiddleware");
 const router = (0, express_1.Router)();
 router.use('/ping', pingRouter_1.default);
 router.use('/en', englishRouter_1.default);
 router.use('/ko', koreanRouter_1.default);
 router.use('/ja', japaneseRouter_1.default);
-router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const markdownFileContent = yield promises_1.default.readFile('./public/markdown/dummy.md', 'utf8');
-        const HTMLParsedMarkdownContent = marked_1.default.parse(markdownFileContent);
-        res.render('main.ejs', {
-            data: HTMLParsedMarkdownContent,
-        });
-    }
-    catch (error) { }
-}));
+router.get('/', languageRedirectMiddleware_1.languageRedirectMiddleware);
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map
