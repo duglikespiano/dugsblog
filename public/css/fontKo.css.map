@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACJ,WAAW,EAAE,0BAA0B;EACvC,mBAAmB,EAAE,IAAI;EACzB,UAAU,EAAE,MAAM",
+"sources": ["../scss/fontKo.scss"],
+"names": [],
+"file": "fontKo.css"
+}
