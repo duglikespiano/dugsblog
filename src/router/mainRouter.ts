@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import fs from 'fs/promises';
+import marked from 'marked';
 import pingRouter from './pingRouter';
 import englishRouter from './englishRouter';
 import koreanRouter from './koreanRouter';
@@ -14,8 +15,11 @@ router.use('/ja', japaneseRouter);
 
 router.get('/', async (req, res) => {
 	try {
-		const data = await fs.readFile('./public/markdown/dummy.md', 'utf8');
-		res.render('main.ejs');
+		const markdownFileContent = await fs.readFile('./public/markdown/dummy.md', 'utf8');
+		const HTMLParsedMarkdownContent = marked.parse(markdownFileContent);
+		res.render('main.ejs', {
+			data: HTMLParsedMarkdownContent,
+		});
 	} catch (error) {}
 });
 

@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const promises_1 = __importDefault(require("fs/promises"));
+const marked_1 = __importDefault(require("marked"));
 const pingRouter_1 = __importDefault(require("./pingRouter"));
 const englishRouter_1 = __importDefault(require("./englishRouter"));
 const koreanRouter_1 = __importDefault(require("./koreanRouter"));
@@ -25,8 +26,11 @@ router.use('/ko', koreanRouter_1.default);
 router.use('/ja', japaneseRouter_1.default);
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const data = yield promises_1.default.readFile('./public/markdown/dummy.md', 'utf8');
-        res.render('main.ejs');
+        const markdownFileContent = yield promises_1.default.readFile('./public/markdown/dummy.md', 'utf8');
+        const HTMLParsedMarkdownContent = marked_1.default.parse(markdownFileContent);
+        res.render('main.ejs', {
+            data: HTMLParsedMarkdownContent,
+        });
     }
     catch (error) { }
 }));
