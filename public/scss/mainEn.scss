@@ -16,6 +16,10 @@ header {
 	background-color: pink;
 }
 
+nav > ul > li > a {
+	cursor: pointer;
+}
+
 .main-container {
 	display: flex;
 	margin-top: 5rem;
