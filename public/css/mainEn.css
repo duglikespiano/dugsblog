@@ -91,7 +91,6 @@ video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-a,
 article,
 aside,
 details,
@@ -130,11 +129,22 @@ table {
 body {
   font-family: 'Roboto', sans-serif;
   font-optical-sizing: auto;
-  font-style: normal; }
-
-body {
-  display: flex;
+  font-style: normal;
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=main.css.map */
+header {
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  top: 0;
+  background-color: pink; }
+
+.main-container {
+  display: flex;
+  margin-top: 5rem; }
+
+aside {
+  width: 10rem; }
+
+/*# sourceMappingURL=mainEn.css.map */

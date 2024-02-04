@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../../css/main.css" rel="stylesheet" />
-    <script src="../javascript/sidebar.js" type="module" defer></script>
-    <title>Dug's Blog - Korean</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./includes/commonAssets')%>
+    <title>Dug's Blog</title>
   </head>
   <body>
-    <%- include('./includes/sidebar')%>
-    <section class='main'>안녕하세요 반갑습니다</section>
+    <%- include('./includes/header')%>
+    <section class='main-container'>
+      <%- include('./includes/sidebar')%>
+      <main>안녕하세요 반갑습니다</main>
+    </section>
   </body>
 </html>
