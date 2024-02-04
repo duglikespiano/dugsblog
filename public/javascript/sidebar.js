@@ -14,7 +14,7 @@ const categoriesElement = document.querySelector('.categories');
 const createCategoryElements = (category, language) => {
 	const categoryElement = document.createElement('li');
 	const linkElement = document.createElement('a');
-	const linkURL = `${currentURL.split('/')[0]}/${currentURL.split('/')[1]}/${category.title[language]}`;
+	const linkURL = `${currentURL.split('/')[0]}/${currentURL.split('/')[1]}/${category.url}`;
 	linkElement.innerText = category.title[language];
 	linkElement.setAttribute('href', linkURL);
 	categoryElement.appendChild(linkElement);
@@ -28,12 +28,12 @@ if (currentURL.split('/')[1] === 'en') {
 	});
 } else if (currentURL.split('/')[1] === 'ko') {
 	const language = 'ko';
-	articleCategory.ko.forEach((category) => {
+	articleCategory.forEach((category) => {
 		createCategoryElements(category, language);
 	});
 } else {
 	const language = 'ja';
-	articleCategory.ja.forEach((category) => {
+	articleCategory.forEach((category) => {
 		createCategoryElements(category, language);
 	});
 }
