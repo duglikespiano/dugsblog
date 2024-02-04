@@ -2,8 +2,8 @@
 
 ## Overview
 
-Reference : https://youtu.be/5SxtBGSSKJM?si=QcV75p9dV3Y4F292<br>
 Topic : Distinguishing 'て' and 'に'<br>
+Reference : [Youtube - [일본어문법] "に〜ています" "で〜ています"를 쉽게 구분하는 방법!](https://youtu.be/5SxtBGSSKJM?si=QcV75p9dV3Y4F292)<br>
 Date : Feb 04 2024<br>
 
 ---

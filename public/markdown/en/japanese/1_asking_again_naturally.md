@@ -2,8 +2,8 @@
 
 ## Overview
 
-Reference : https://youtu.be/b-x_EIPVhJE?si=6q0SEeu_ywcrU7jr<br>
 Topic : Asking again naturally<br>
+Reference : [[일본어 회화] [もう一度…]라고 말해선 안돼! 자연스럽게 되묻는 표현을 익히자](https://youtu.be/b-x_EIPVhJE?si=6q0SEeu_ywcrU7jr)<br>
 Date : Feb 03 2024<br>
 
 ---
