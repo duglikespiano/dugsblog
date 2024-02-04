@@ -1,16 +1,16 @@
 import { Router } from 'express';
 import pingRouter from './pingRouter';
-import englishRouter from './englishRouter';
-import koreanRouter from './koreanRouter';
-import japaneseRouter from './japaneseRouter';
+import enRouter from './enRouter/mainRouter';
+import koRouter from './koRouter/mainRouter';
+import jaRouter from './jaRouter/mainRouter';
 import { languageRedirectMiddleware } from '../middleware/languageRedirectMiddleware';
 
 const router = Router();
 
 router.use('/ping', pingRouter);
-router.use('/en', englishRouter);
-router.use('/ko', koreanRouter);
-router.use('/ja', japaneseRouter);
+router.use('/en', enRouter);
+router.use('/ko', koRouter);
+router.use('/ja', jaRouter);
 
 router.get('/', languageRedirectMiddleware);
 

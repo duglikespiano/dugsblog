@@ -8,7 +8,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const mainRouter_1 = __importDefault(require("./router/mainRouter"));
+const rootRouter_1 = __importDefault(require("./router/rootRouter"));
 exports.app = (0, express_1.default)();
 dotenv_1.default.config();
 exports.app.set('view engine', 'ejs');
@@ -17,5 +17,5 @@ exports.app.use(express_1.default.json());
 exports.app.use(express_1.default.urlencoded({ extended: true }));
 exports.app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 exports.app.use((0, cookie_parser_1.default)());
-exports.app.use(mainRouter_1.default);
+exports.app.use(rootRouter_1.default);
 //# sourceMappingURL=app.js.map
