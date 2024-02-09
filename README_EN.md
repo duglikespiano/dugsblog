@@ -42,6 +42,8 @@
 
 ### 3. Development note
 
+- Categories on sidebar added(Feb 04 2024)
+- Routing depends on languages added(Feb 04 2024)
 - Deployed on Railway(Feb 03 2024)
 - Project started(Feb 02 2024)
   </br>
