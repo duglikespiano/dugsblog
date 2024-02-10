@@ -7,6 +7,14 @@ const articleCategory = [
 			ja: '日本語',
 		},
 	},
+	{
+		url: 'travel',
+		title: {
+			en: 'travel',
+			ko: '여행',
+			ja: '旅行',
+		},
+	},
 ];
 const currentURL = location.pathname;
 const categoriesElement = document.querySelector('.categories');

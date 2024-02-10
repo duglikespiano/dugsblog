@@ -5,10 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
+const travelRouter_1 = __importDefault(require("./travelRouter"));
 const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
     res.render('./en/main.ejs');
 });
 router.use('/japanese', japaneseRouter_1.default);
+router.use('/travel', travelRouter_1.default);
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map

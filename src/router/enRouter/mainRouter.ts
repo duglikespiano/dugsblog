@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import japaneseRouter from './japaneseRouter';
+import travelRouter from './travelRouter';
 
 const router = Router();
 
@@ -8,5 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/japanese', japaneseRouter);
+router.use('/travel', travelRouter);
 
 export default router;
