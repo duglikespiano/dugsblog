@@ -10,7 +10,7 @@ Date : Feb 07 2024<br>
 
 ### Difference between '一つ' and '一個'
 
-Let's the difference between '一つ' and '一個'.<br>
+Let's learn the difference between '一つ' and '一個'.<br>
 
 ---
 
