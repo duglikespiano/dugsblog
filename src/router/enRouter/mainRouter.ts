@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import japaneseRouter from './japaneseRouter';
-import travelRouter from './travelRouter';
+import dailyLivesRouter from './dailyLivesRouter';
 
 const router = Router();
 
@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/japanese', japaneseRouter);
-router.use('/travel', travelRouter);
+router.use('/pictures', dailyLivesRouter);
 
 export default router;
