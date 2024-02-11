@@ -8,41 +8,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const promises_1 = __importDefault(require("fs/promises"));
-const marked_1 = require("marked");
+const aws_s3_1 = require("../../aws-s3");
+const dotenv_1 = require("../../dotenv");
 const router = (0, express_1.Router)();
 const language = 'en';
-const markdownRootPath = './public/markdown';
-const categoryName = 'travel';
+const categoryName = 'dailylives';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const filenames = (yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
-        return -1;
-    });
+    const filenames = yield (0, aws_s3_1.getFilenamesFromS3)();
     let data = '';
-    filenames.sort(function (a, b) {
-        return 1;
-    });
-    for (let element of filenames) {
-        const linkTitle = element.split('.')[0];
-        data += `
-			<div class="article">
-				<a href="./${categoryName}/${element.split('_')[0]}">${linkTitle}</a>
-			</div>`;
+    if (filenames) {
+        for (let element of filenames) {
+            data += `
+				<div class="article">
+					<a href="./${categoryName}/${element.split('_')[0]}">
+						<img src="${dotenv_1.AWSS3ThumbnailFolderURL}/${element}">
+					</a>
+				</div>`;
+        }
     }
     res.render(`./${language}/${categoryName}.ejs`, { data });
 }));
-router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const param = req.params.param;
-    const filenames = yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`);
-    const filename = filenames.filter((filename) => filename === param)[0];
-    const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
-    const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/japanese.ejs`, { data });
-}));
+router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () { }));
 exports.default = router;
 //# sourceMappingURL=dailyLivesRouter.js.map

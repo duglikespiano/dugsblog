@@ -10,8 +10,11 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.511.0",
 		"@types/cookie-parser": "^1.4.6",
 		"@types/express": "^4.17.21",
+		"aws-sdk": "^2.1555.0",
+		"aws-sdk-js-codemod": "^1.0.0",
 		"cookie-parser": "^1.4.6",
 		"dotenv": "^16.4.1",
 		"ejs": "^3.1.9",

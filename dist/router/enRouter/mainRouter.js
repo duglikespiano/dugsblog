@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
     res.render('./en/main.ejs');
 });
 router.use('/japanese', japaneseRouter_1.default);
-router.use('/pictures', dailyLivesRouter_1.default);
+router.use('/dailylives', dailyLivesRouter_1.default);
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map

@@ -8,11 +8,11 @@ const articleCategory = [
 		},
 	},
 	{
-		url: 'travel',
+		url: 'dailylives',
 		title: {
-			en: 'travel',
-			ko: '여행',
-			ja: '旅行',
+			en: 'dailylives',
+			ko: '일상',
+			ja: '日常',
 		},
 	},
 ];

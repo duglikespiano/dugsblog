@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/japanese', japaneseRouter);
-router.use('/pictures', dailyLivesRouter);
+router.use('/dailylives', dailyLivesRouter);
 
 export default router;

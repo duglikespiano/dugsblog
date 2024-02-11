@@ -1,11 +1,9 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import router from './router/rootRouter';
 
 export const app = express();
-dotenv.config();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../public/views'));
