@@ -21,14 +21,14 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (filenames) {
         for (let element of filenames) {
             data += `
-				<div class="article">
+				<li class="thumbnail" data-filename=${element}>
 					<a href="./${categoryName}/${element.split('_')[0]}">
 						<img src="${dotenv_1.AWSS3ThumbnailFolderURL}/${element}">
 					</a>
-				</div>`;
+				</li>`;
         }
     }
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    res.render(`./${language}/${categoryName}/main.ejs`, { data });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () { }));
 exports.default = router;

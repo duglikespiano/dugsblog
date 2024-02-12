@@ -1,0 +1,27 @@
+main {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5% 0;
+}
+
+.thumbnails-container {
+	width: 1400px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.thumbnail {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	overflow: hidden;
+	a {
+		width: 100%;
+		img {
+			width: 100%;
+		}
+	}
+}
