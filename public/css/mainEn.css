@@ -143,8 +143,7 @@ header {
   position: fixed;
   width: 100%;
   height: 5rem;
-  top: 0;
-  background-color: pink; }
+  top: 0; }
 
 nav > ul > li > a {
   cursor: pointer; }
@@ -155,5 +154,20 @@ nav > ul > li > a {
 
 aside {
   width: 10rem; }
+
+body header {
+  background: pink; }
+
+body.dark body header {
+  background: navy;
+  color: white; }
+
+@media (prefers-color-scheme: light) {
+  header {
+    background: pink; } }
+@media (prefers-color-scheme: dark) {
+  body header {
+    background: navy;
+    color: white; } }
 
 /*# sourceMappingURL=mainEn.css.map */

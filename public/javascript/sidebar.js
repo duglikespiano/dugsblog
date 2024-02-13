@@ -1,3 +1,13 @@
+const header = document.querySelector('header');
+console.log(window.matchMedia('(prefers-color-scheme: dark)'));
+console.log(window.matchMedia('(prefers-color-scheme: light)'));
+console.log(window.matchMedia('(prefers-color-scheme: no-preference)'));
+console.log(header);
+
+if (window.matchMedia('(prefers-color-scheme: dark)')) {
+	// document.querySelector('body').classList.add('dark');
+}
+
 const articleCategory = [
 	{
 		url: 'japanese',
