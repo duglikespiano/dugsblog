@@ -42,6 +42,8 @@
 
 ### 3. Development note
 
+- Category 'travel' renamed as 'daily lives'(Feb 11 2024)
+- Category 'travel' added(Feb 10 2024)
 - Categories on sidebar added(Feb 04 2024)
 - Routing depends on languages added(Feb 04 2024)
 - Deployed on Railway(Feb 03 2024)
