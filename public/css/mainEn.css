@@ -127,7 +127,8 @@ table {
   border-spacing: 0; }
 
 a {
-  display: block; }
+  text-decoration: none;
+  color: inherit; }
 
 img {
   vertical-align: top; }
@@ -137,7 +138,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   padding: 0;
-  margin: 0; }
+  margin: 0 auto; }
 
 header {
   position: fixed;
@@ -145,29 +146,58 @@ header {
   height: 5rem;
   top: 0; }
 
+nav {
+  width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: palevioletred; }
+
 nav > ul > li > a {
   cursor: pointer; }
 
-.main-container {
-  display: flex;
-  margin-top: 5rem; }
+.sidebar-contents-container {
+  width: 1600px;
+  height: 100%;
+  padding-top: 5rem;
+  margin: 0 auto; }
 
 aside {
-  width: 10rem; }
+  position: fixed;
+  min-width: 10rem;
+  height: 100%;
+  background-color: green;
+  opacity: 0.5; }
+
+.categories li {
+  display: flex;
+  align-items: center;
+  height: 30px; }
+
+main {
+  background-color: aqua;
+  min-height: calc(100vh - 80px);
+  margin-left: 10rem; }
 
 body header {
   background: pink; }
 
-body.dark body header {
-  background: navy;
-  color: white; }
-
-@media (prefers-color-scheme: light) {
-  header {
-    background: pink; } }
-@media (prefers-color-scheme: dark) {
-  body header {
-    background: navy;
-    color: white; } }
+@media screen and (max-width: 1600px) {
+  body {
+    background-color: #651616; } }
+@media screen and (max-width: 1200px) {
+  body {
+    background-color: #9a8787; } }
+@media screen and (max-width: 992px) {
+  body {
+    background-color: #333d6d; } }
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #36724b; } }
+@media screen and (max-width: 500px) {
+  body {
+    background-color: #8da15a; } }
+@media screen and (max-width: 375px) {
+  body {
+    background-color: #853fa1; } }
 
 /*# sourceMappingURL=mainEn.css.map */

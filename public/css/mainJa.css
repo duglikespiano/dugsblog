@@ -127,7 +127,8 @@ table {
   border-spacing: 0; }
 
 a {
-  display: block; }
+  text-decoration: none;
+  color: inherit; }
 
 img {
   vertical-align: top; }

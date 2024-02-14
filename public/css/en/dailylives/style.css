@@ -1,12 +1,10 @@
 main {
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 5% 0; }
+  align-items: center; }
 
 .thumbnails-container {
-  width: 1400px;
+  width: 1300px;
   display: grid;
   grid-template-columns: repeat(4, 1fr); }
 
