@@ -41,7 +41,6 @@ const createCategoryElements = (category, language) => {
 if (currentURL.split('/')[1] === 'en') {
 	const language = 'en';
 	articleCategory.forEach((category) => {
-		console.log(category);
 		createCategoryElements(category, language);
 	});
 } else if (currentURL.split('/')[1] === 'ko') {
