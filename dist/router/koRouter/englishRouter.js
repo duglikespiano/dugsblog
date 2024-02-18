@@ -16,7 +16,7 @@ const express_1 = require("express");
 const promises_1 = __importDefault(require("fs/promises"));
 const marked_1 = require("marked");
 const router = (0, express_1.Router)();
-const language = 'en';
+const language = 'ko';
 const markdownRootPath = './public/markdown';
 const categoryName = 'english';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -30,8 +30,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     for (let element of filenames) {
         const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${element}`, 'utf8');
         const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
-        const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '')[0].toUpperCase() +
-            element.split('_').slice(1).join(' ').replace('.md', '').substring(1);
+        const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
         data += `
 			<div class="article" data-date=${date}>
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>

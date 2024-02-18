@@ -1,14 +1,12 @@
-const header = document.querySelector('header');
-console.log(window.matchMedia('(prefers-color-scheme: dark)'));
-console.log(window.matchMedia('(prefers-color-scheme: light)'));
-console.log(window.matchMedia('(prefers-color-scheme: no-preference)'));
-console.log(header);
-
-if (window.matchMedia('(prefers-color-scheme: dark)')) {
-	// document.querySelector('body').classList.add('dark');
-}
-
 const articleCategory = [
+	{
+		url: 'english',
+		title: {
+			en: 'english',
+			ko: '영어',
+			ja: '英語',
+		},
+	},
 	{
 		url: 'japanese',
 		title: {
@@ -26,6 +24,7 @@ const articleCategory = [
 		},
 	},
 ];
+
 const currentURL = location.pathname;
 const categoriesElement = document.querySelector('.categories');
 
@@ -42,6 +41,7 @@ const createCategoryElements = (category, language) => {
 if (currentURL.split('/')[1] === 'en') {
 	const language = 'en';
 	articleCategory.forEach((category) => {
+		console.log(category);
 		createCategoryElements(category, language);
 	});
 } else if (currentURL.split('/')[1] === 'ko') {

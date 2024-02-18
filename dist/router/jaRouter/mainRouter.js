@@ -4,11 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const englishRouter_1 = __importDefault(require("./englishRouter"));
 const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
 const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
     res.render('./ja/main.ejs');
 });
+router.use('/english', englishRouter_1.default);
 router.use('/japanese', japaneseRouter_1.default);
 exports.default = router;
 //# sourceMappingURL=mainRouter.js.map
