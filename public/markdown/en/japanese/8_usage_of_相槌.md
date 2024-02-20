@@ -15,22 +15,22 @@ Especially about 'さしすせそ'.<br>
 
 ---
 
-#### １。'さ'すが！
+#### 1. 'さ'すが！
 
 'さすが！dug さんだ！' can be used when you compliment someone.<br>
 
-#### ２。'し'らなかった！
+#### 2. 'し'らなかった！
 
 '全然知らなかった！' can be used in the meaning of 'でもあなたはそれを知っていましたね、すごい！'.<br>
 
-#### ３。'す'てき！
+#### 3. 'す'てき！
 
 'すてきだね！' can be used when someone did his/her best or made a big result.<br>
 
-#### ４。'せ'ンすがいい！
+#### 4. 'せ'ンすがいい！
 
 'センスがいいね！' can be used for someone who have nice perspect to choose something.<br>
 
-#### ５。'そ'っか？
+#### 5. 'そ'っか？
 
 'そっか'？ can be used in a conversation instead of 'そうですか'.<br>
