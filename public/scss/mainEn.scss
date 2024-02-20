@@ -6,6 +6,7 @@ body {
 	font-style: normal;
 	padding: 0;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 header {
@@ -32,7 +33,7 @@ nav > ul > li > a {
 }
 
 .pagetitle {
-	font-size: 40px;
+	font-size: 50px;
 	cursor: pointer;
 }
 
@@ -96,36 +97,40 @@ main {
 }
 
 @media screen and (max-width: $maxwidth-extra-extra-large) {
-	body {
-		background-color: rgb(101, 22, 22);
+	nav {
+		width: calc(100% - 40px);
+		padding: 0 20px;
 	}
 }
 
 @media screen and (max-width: $maxwidth-extra-large) {
-	body {
-		background-color: rgb(154, 135, 135);
+	nav {
+		width: calc(100% - 40px);
 	}
 }
 
 @media screen and (max-width: $maxwidth-large) {
-	body {
-		background-color: rgb(51, 61, 109);
+	nav {
+		width: calc(100% - 40px);
 	}
 }
 
 @media screen and (max-width: $maxwidth-medium) {
-	body {
-		background-color: rgb(54, 114, 75);
+	nav {
+		width: calc(100% - 20px);
+		padding: 0 10px;
 	}
 }
 
 @media screen and (max-width: $maxwidth-small) {
-	body {
-		background-color: rgb(141, 161, 90);
+	nav {
+		.language-darkmode-selectors {
+			display: none;
+		}
 	}
 }
 @media screen and (max-width: $maxwidth-extra-small) {
-	body {
-		background-color: rgb(133, 63, 161);
+	.pagetitle {
+		font-size: 30px;
 	}
 }

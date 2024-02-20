@@ -1,59 +1,160 @@
-/*
-Error: File to import not found or unreadable: ./common.scss.
-       Load path: /Users/suho/webdevelop/projects/dugsblog/public/scss
-        on line 1 of public/scss/mainKo.scss
-
-1: @import './common.scss';
-2: 
-3: body {
-4: 	font-family: 'Noto Sans KR', sans-serif;
-5: 	font-optical-sizing: auto;
-6: 	font-style: normal;
-
-Backtrace:
-public/scss/mainKo.scss:1
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:310:in `visit_import'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Users/suho/.rvm/rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: ./common.scss.\A        Load path: /Users/suho/webdevelop/projects/dugsblog/public/scss\A         on line 1 of public/scss/mainKo.scss\A \A 1: @import './common.scss';\A 2: \A 3: body {\A 4: 	font-family: 'Noto Sans KR', sans-serif;\A 5: 	font-optical-sizing: auto;\A 6: 	font-style: normal;"; }
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+img {
+  vertical-align: top; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding: 0;
+  margin: 0; }
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  top: 0;
+  background-color: pink; }
+
+nav > ul > li > a {
+  cursor: pointer; }
+
+.main-container {
+  display: flex;
+  margin-top: 5rem; }
+
+aside {
+  width: 10rem; }
+
+/*# sourceMappingURL=mainKo.css.map */
