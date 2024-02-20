@@ -138,8 +138,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   padding: 0;
-  margin: 0 auto;
-  overflow: hidden; }
+  margin: 0 auto; }
 
 header {
   position: fixed;
@@ -200,7 +199,8 @@ aside {
   font-size: 30px;
   border-top: 1px solid grey;
   border-right: 1px solid grey;
-  padding-top: 30px; }
+  padding-top: 30px;
+  box-sizing: border-box; }
 
 .categories {
   display: flex;
@@ -217,7 +217,13 @@ main {
 @media screen and (max-width: 1600px) {
   nav {
     width: calc(100% - 40px);
-    padding: 0 20px; } }
+    padding: 0 20px; }
+
+  .sidebar-main {
+    width: 100%; }
+
+  main {
+    width: calc(100% - 160px); } }
 @media screen and (max-width: 1200px) {
   nav {
     width: calc(100% - 40px); } }
