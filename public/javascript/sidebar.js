@@ -29,7 +29,7 @@ const currentURL = location.pathname;
 const categoriesElement = document.querySelector('.categories');
 
 const createCategoryElements = (category, language) => {
-	const categoryElement = document.createElement('li');
+	const categoryElement = document.createElement('h2');
 	const linkElement = document.createElement('a');
 	const linkURL = `${currentURL.split('/')[0]}/${currentURL.split('/')[1]}/${category.url}`;
 	linkElement.innerText = category.title[language];
