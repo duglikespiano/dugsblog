@@ -12,8 +12,7 @@ const connect_livereload_1 = __importDefault(require("connect-livereload"));
 const rootRouter_1 = __importDefault(require("./router/rootRouter"));
 exports.app = (0, express_1.default)();
 const liveServer = livereload_1.default.createServer({
-    exts: ['ejs', 'scss', 'ts', 'css', 'js'],
-    debug: true,
+    exts: ['ejs', 'css', 'js'],
 });
 liveServer.watch(path_1.default.join(__dirname, '../public'));
 liveServer.server.once('connection', () => {

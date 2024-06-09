@@ -7,8 +7,7 @@ import router from './router/rootRouter';
 
 export const app = express();
 const liveServer = livereload.createServer({
-	exts: ['ejs', 'scss', 'ts', 'css', 'js'],
-	debug: true,
+	exts: ['ejs', 'css', 'js'],
 });
 liveServer.watch(path.join(__dirname, '../public'));
 liveServer.server.once('connection', () => {
