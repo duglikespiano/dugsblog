@@ -1,0 +1,11 @@
+@import '../common/body.scss';
+@import '../common/header.scss';
+@import '../common/sidebar.scss';
+
+main {
+	display: flex;
+	min-height: calc(100vh - 80px);
+	justify-content: center;
+	align-items: center;
+	margin-left: 160px;
+}

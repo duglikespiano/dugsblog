@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 			</div>`;
 	}
 
-	res.render(`./${language}/japanese.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data });
 });
 
 router.get('/:param', async (req, res) => {

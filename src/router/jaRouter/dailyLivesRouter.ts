@@ -4,7 +4,7 @@ import { AWSS3ThumbnailFolderURL } from '../../dotenv';
 
 const router = Router();
 
-const language = 'en';
+const language = 'ja';
 const categoryName = 'dailylives';
 
 router.get('/', async (req, res) => {

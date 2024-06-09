@@ -37,7 +37,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
 			</div>`;
     }
-    res.render(`./${language}/japanese.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const param = req.params.param;

@@ -1,0 +1,20 @@
+@import '../common/variables.scss';
+
+.page-bottom {
+	display: flex;
+	min-height: 100vh;
+
+	.sidebar {
+		height: inherit;
+		border-right: 1px solid grey;
+		padding-top: $header-height;
+
+		.categories {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			font-size: 30px;
+			padding-top: 30px;
+		}
+	}
+}

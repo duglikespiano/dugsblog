@@ -1,3 +1,15 @@
+@import '../common/body.scss';
+@import '../common/header.scss';
+@import '../common/sidebar.scss';
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	padding: 0;
+	margin: 0 auto;
+}
+
 main {
 	display: flex;
 	justify-content: center;

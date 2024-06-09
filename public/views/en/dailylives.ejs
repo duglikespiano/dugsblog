@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('./includes/head')%>
-    <link href='../../css/en/main.css' rel='stylesheet'>
+    <link href='../../css/en/dailylives.css' rel='stylesheet'>
     <title>Dug's Blog</title>
   </head>
   <body>
@@ -10,7 +10,9 @@
     <section class='page-bottom'>
       <%- include('./includes/sidebar')%>
       <main>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio delectus iure veritatis unde quidem quaerat tenetur facilis, quam sit quasi et, est repudiandae quisquam at dolorum, laboriosam dolorem labore? Quibusdam!
+        <ul class='thumbnails-container'>
+          <%- data %>
+        </ul>
       </main>
     </section>
   </body>

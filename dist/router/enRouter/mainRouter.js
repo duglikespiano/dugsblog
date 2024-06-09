@@ -8,8 +8,9 @@ const englishRouter_1 = __importDefault(require("./englishRouter"));
 const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
 const dailyLivesRouter_1 = __importDefault(require("./dailyLivesRouter"));
 const router = (0, express_1.Router)();
+const language = 'en';
 router.get('/', (req, res) => {
-    res.render('./en/main.ejs');
+    res.render(`./${language}/main.ejs`);
 });
 router.use('/english', englishRouter_1.default);
 router.use('/japanese', japaneseRouter_1.default);

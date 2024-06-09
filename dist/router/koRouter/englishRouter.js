@@ -36,7 +36,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
 			</div>`;
     }
-    res.render(`./${language}/japanese.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const param = req.params.param;
@@ -45,7 +45,7 @@ router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const filename = filenames[fileIndex];
     const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
     const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/japanese.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data });
 }));
 exports.default = router;
 //# sourceMappingURL=englishRouter.js.map

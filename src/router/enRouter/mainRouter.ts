@@ -4,9 +4,10 @@ import japaneseRouter from './japaneseRouter';
 import dailyLivesRouter from './dailyLivesRouter';
 
 const router = Router();
+const language = 'en';
 
 router.get('/', (req, res) => {
-	res.render('./en/main.ejs');
+	res.render(`./${language}/main.ejs`);
 });
 
 router.use('/english', englishRouter);
