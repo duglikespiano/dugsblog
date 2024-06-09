@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon -e js,ejs,html -w . -w public -w views -w routes -w models dist/index.js"
+		"start": "nodemon -e js,ejs,scss -w . -w public -w views -w routes -w models dist/index.js & sass --watch ./public/scss:./public/css"
 	},
 	"author": "",
 	"license": "ISC",
