@@ -3,3 +3,5 @@
 /.sass-cache
 .env
 todo.txt
+*.css
+*.css.map
