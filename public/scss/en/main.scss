@@ -1,11 +1,7 @@
-@use '../common/body.scss' as *;
-@use '../common/header.scss' as *;
-@use '../common/sidebar.scss' as *;
-
 main {
 	display: flex;
-	min-height: calc(100vh - 80px);
 	justify-content: center;
 	align-items: center;
 	margin-left: 160px;
+	background-color: pink;
 }

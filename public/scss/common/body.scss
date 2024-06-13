@@ -1,6 +1,8 @@
-@import '../common/variables.scss';
+@use '../common/variables.scss' as *;
 
 body {
+	position: relative;
+	min-height: 100vh;
 	font-family: 'Roboto', sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
