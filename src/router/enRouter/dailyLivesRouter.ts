@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { getFilenamesFromS3 } from '../../aws-s3';
 import { AWSS3ThumbnailFolderURL } from '../../dotenv';
+import { capitalizeText } from '../../common/commonFunctions';
 
 const router = Router();
 
@@ -8,6 +9,7 @@ const language = 'en';
 const categoryName = 'dailylives';
 
 router.get('/', async (req, res) => {
+	const title = capitalizeText(categoryName);
 	const filenames = await getFilenamesFromS3();
 	let data = '';
 
@@ -22,7 +24,7 @@ router.get('/', async (req, res) => {
 		}
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data, title: 'Daily life' });
+	res.render(`./${language}/${categoryName}.ejs`, { data, title });
 });
 
 router.get('/:param', async (req, res) => {});

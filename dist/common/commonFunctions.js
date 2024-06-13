@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.capitalizeText = void 0;
 const convertDate = (date, language) => {
     const sourceDate = date.split('-');
     if (language === 'ko') {
@@ -61,4 +63,5 @@ const capitalizeText = (string) => {
     });
     return convertedStringArray.join(' ');
 };
+exports.capitalizeText = capitalizeText;
 //# sourceMappingURL=commonFunctions.js.map

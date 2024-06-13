@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const promises_1 = __importDefault(require("fs/promises"));
 const marked_1 = require("marked");
+const commonFunctions_1 = require("../../common/commonFunctions");
 const router = (0, express_1.Router)();
 const language = 'en';
 const markdownRootPath = './public/markdown';
 const categoryName = 'english';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const title = (0, commonFunctions_1.capitalizeText)(categoryName);
         const filenames = (yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
             return -1;
         });
@@ -38,7 +40,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 					<a href="./${categoryName}/${element.split('_')[0]}">${linkTitle}</a>
 				</div>`;
         }
-        res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
+        res.render(`./${language}/${categoryName}.ejs`, { data: '', title });
     }
     catch (error) {
         if (error.errno === -2) {
@@ -48,13 +50,14 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const title = (0, commonFunctions_1.capitalizeText)(categoryName);
     const param = req.params.param;
     const filenames = yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`);
     const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
     const filename = filenames[fileIndex];
     const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
     const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
+    res.render(`./${language}/${categoryName}.ejs`, { data: '', title });
 }));
 exports.default = router;
 //# sourceMappingURL=englishRouter.js.map

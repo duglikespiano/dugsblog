@@ -37,7 +37,7 @@ const convertDate = (date: string, language: string) => {
 	}
 };
 
-const capitalizeText = (string: string): string => {
+export const capitalizeText = (string: string): string => {
 	const stringToArray = string.split(' ');
 	const convertedStringArray: string[] = [];
 	stringToArray.forEach((word) => {

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import fs from 'fs/promises';
 import { marked } from 'marked';
 import { FsError } from '../../common/types';
+import { capitalizeText } from '../../common/commonFunctions';
 
 const router = Router();
 
@@ -11,6 +12,7 @@ const categoryName = 'english';
 
 router.get('/', async (req, res) => {
 	try {
+		const title = capitalizeText(categoryName);
 		const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
 			return -1;
 		});
@@ -29,7 +31,7 @@ router.get('/', async (req, res) => {
 					<a href="./${categoryName}/${element.split('_')[0]}">${linkTitle}</a>
 				</div>`;
 		}
-		res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
+		res.render(`./${language}/${categoryName}.ejs`, { data: '', title });
 	} catch (error) {
 		if ((error as FsError).errno === -2) {
 			fs.mkdir('./public/markdown/en/english');
@@ -39,6 +41,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:param', async (req, res) => {
+	const title = capitalizeText(categoryName);
 	const param = req.params.param;
 	const filenames = await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`);
 	const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
@@ -46,7 +49,7 @@ router.get('/:param', async (req, res) => {
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
 	const data = marked.parse(markdown);
 
-	res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
+	res.render(`./${language}/${categoryName}.ejs`, { data: '', title });
 });
 
 export default router;

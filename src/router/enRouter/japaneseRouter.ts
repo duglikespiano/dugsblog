@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import fs from 'fs/promises';
 import { marked } from 'marked';
+import { capitalizeText } from '../../common/commonFunctions';
 
 const router = Router();
 
@@ -9,6 +10,7 @@ const markdownRootPath = './public/markdown';
 const categoryName = 'japanese';
 
 router.get('/', async (req, res) => {
+	const title = capitalizeText(categoryName);
 	const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
 		return -1;
 	});
@@ -30,10 +32,11 @@ router.get('/', async (req, res) => {
 			</div>`;
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data, title: 'Japanese' });
+	res.render(`./${language}/${categoryName}.ejs`, { data, title });
 });
 
 router.get('/:param', async (req, res) => {
+	const title = capitalizeText(categoryName);
 	const param = req.params.param;
 
 	const filenames = await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`);
@@ -42,7 +45,7 @@ router.get('/:param', async (req, res) => {
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
 	const data = marked.parse(markdown);
 
-	res.render(`./${language}/japanese.ejs`, { data, title: 'Japanese' });
+	res.render(`./${language}/japanese.ejs`, { data, title });
 });
 
 export default router;
