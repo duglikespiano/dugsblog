@@ -1,6 +1,6 @@
-@import '../common/body.scss';
-@import '../common/header.scss';
-@import '../common/sidebar.scss';
+@use '../common/body.scss' as *;
+@use '../common/header.scss' as *;
+@use '../common/sidebar.scss' as *;
 
 body {
 	font-family: 'Roboto', sans-serif;
