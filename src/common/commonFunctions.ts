@@ -36,3 +36,14 @@ const convertDate = (date: string, language: string) => {
 		return false;
 	}
 };
+
+const capitalizeText = (string: string): string => {
+	const stringToArray = string.split(' ');
+	const convertedStringArray: string[] = [];
+	stringToArray.forEach((word) => {
+		const convertedWordArray = word.split('');
+		convertedWordArray[0] = convertedWordArray[0].toUpperCase();
+		convertedStringArray.push(convertedWordArray.join(''));
+	});
+	return convertedStringArray.join(' ');
+};

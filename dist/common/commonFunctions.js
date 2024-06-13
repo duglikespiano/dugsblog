@@ -51,4 +51,14 @@ const convertDate = (date, language) => {
         return false;
     }
 };
+const capitalizeText = (string) => {
+    const stringToArray = string.split(' ');
+    const convertedStringArray = [];
+    stringToArray.forEach((word) => {
+        const convertedWordArray = word.split('');
+        convertedWordArray[0] = convertedWordArray[0].toUpperCase();
+        convertedStringArray.push(convertedWordArray.join(''));
+    });
+    return convertedStringArray.join(' ');
+};
 //# sourceMappingURL=commonFunctions.js.map
