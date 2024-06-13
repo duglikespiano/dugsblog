@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 			</div>`;
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data, title: 'Japanese' });
 });
 
 router.get('/:param', async (req, res) => {
@@ -42,7 +42,7 @@ router.get('/:param', async (req, res) => {
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
 	const data = marked.parse(markdown);
 
-	res.render(`./${language}/japanese.ejs`, { data });
+	res.render(`./${language}/japanese.ejs`, { data, title: 'Japanese' });
 });
 
 export default router;

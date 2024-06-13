@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 		}
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data, title: 'Daily life' });
 });
 
 router.get('/:param', async (req, res) => {});

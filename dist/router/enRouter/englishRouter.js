@@ -35,10 +35,10 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 element.split('_').slice(1).join(' ').replace('.md', '').substring(1);
             data += `
 				<div class="article" data-date=${date}>
-					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+					<a href="./${categoryName}/${element.split('_')[0]}">${linkTitle}</a>
 				</div>`;
         }
-        res.render(`./${language}/japanese.ejs`, { data });
+        res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
     }
     catch (error) {
         if (error.errno === -2) {
@@ -54,7 +54,7 @@ router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const filename = filenames[fileIndex];
     const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
     const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
 }));
 exports.default = router;
 //# sourceMappingURL=englishRouter.js.map

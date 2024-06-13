@@ -26,10 +26,10 @@ router.get('/', async (req, res) => {
 				element.split('_').slice(1).join(' ').replace('.md', '').substring(1);
 			data += `
 				<div class="article" data-date=${date}>
-					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+					<a href="./${categoryName}/${element.split('_')[0]}">${linkTitle}</a>
 				</div>`;
 		}
-		res.render(`./${language}/japanese.ejs`, { data });
+		res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
 	} catch (error) {
 		if ((error as FsError).errno === -2) {
 			fs.mkdir('./public/markdown/en/english');
@@ -46,7 +46,7 @@ router.get('/:param', async (req, res) => {
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
 	const data = marked.parse(markdown);
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data: '', title: 'English' });
 });
 
 export default router;
