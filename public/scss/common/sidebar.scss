@@ -1,17 +1,20 @@
 @use '../common/variables.scss' as *;
 
 .page-bottom {
-	display: flex;
+	display: grid;
+	grid-template-columns: 20rem auto;
 	min-height: calc(100vh - $header-height);
 	.sidebar {
-		height: inherit;
 		border-right: 1px solid grey;
-
 		.categories {
 			display: flex;
 			flex-direction: column;
 			gap: 20px;
 			font-size: 30px;
+			h2 {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }
