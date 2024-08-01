@@ -9,7 +9,7 @@ const japaneseRouter_1 = __importDefault(require("./japaneseRouter"));
 const router = (0, express_1.Router)();
 const language = 'ko';
 router.get('/', (req, res) => {
-    res.render(`./${language}/main.ejs`);
+    res.render(`./${language}/main.ejs`, { title: '', language });
 });
 router.use('/english', englishRouter_1.default);
 router.use('/japanese', japaneseRouter_1.default);

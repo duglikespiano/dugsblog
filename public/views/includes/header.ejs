@@ -7,9 +7,20 @@
     </h1>
     <section class='languages-themes'>
       <ul class='languages'>
+
+        <% if (language === 'en'){%>
         <li><a class='language'>한글</a></li>
         <li><a class='language'>日本語</a></li>
+        <%} else if (language === 'ko'){%>
+        <li><a class='language'>en</a></li>
+        <li><a class='language'>日本語</a></li>
+        <%} else { %>
+        <li><a class='language'>en</a></li>
+        <li><a class='language'>한글</a></li>
+        <%}%>
+
       </ul>
+
       <div class='themes'>
         <i class="fa-solid fa-sun"></i>
         <i class="fa-solid fa-moon"></i>

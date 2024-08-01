@@ -7,7 +7,7 @@ const router = Router();
 const language = 'en';
 
 router.get('/', (req, res) => {
-	res.render(`./${language}/main.ejs`, { title: '' });
+	res.render(`./${language}/main.ejs`, { title: '', language });
 });
 
 router.use('/english', englishRouter);
