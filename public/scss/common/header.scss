@@ -33,10 +33,15 @@ header {
 			.language {
 				cursor: pointer;
 			}
-			li:nth-of-type(1)::after {
-				content: '/';
-				margin-left: 5px;
-				margin-right: 5px;
+			li {
+				a {
+					display: inline;
+				}
+				&:nth-of-type(1)::after {
+					content: '/';
+					margin-left: 5px;
+					margin-right: 5px;
+				}
 			}
 		}
 
