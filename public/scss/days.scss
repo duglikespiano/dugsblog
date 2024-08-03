@@ -1,0 +1,20 @@
+.thumbnails-container {
+	width: 1300px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	padding: 70px 0;
+}
+
+.thumbnail {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	overflow: hidden;
+	a {
+		width: 100%;
+		img {
+			width: 100%;
+		}
+	}
+}
