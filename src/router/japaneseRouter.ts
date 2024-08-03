@@ -2,13 +2,17 @@ import { Router } from 'express';
 import fs from 'fs/promises';
 import { marked } from 'marked';
 
-const router = Router();
+const router = Router({ mergeParams: true });
 
-const language = 'ja';
 const markdownRootPath = './public/markdown';
 const categoryName = 'japanese';
 
+type Language = {
+	language: string;
+};
+
 router.get('/', async (req, res) => {
+	const { language } = req.params as Language;
 	const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
 		return -1;
 	});
@@ -28,10 +32,11 @@ router.get('/', async (req, res) => {
 			</div>`;
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
 });
 
 router.get('/:param', async (req, res) => {
+	const { language } = req.params as unknown as Language;
 	const param = req.params.param;
 
 	const filenames = await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`);
@@ -40,7 +45,7 @@ router.get('/:param', async (req, res) => {
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
 	const data = marked.parse(markdown);
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
 });
 
 export default router;

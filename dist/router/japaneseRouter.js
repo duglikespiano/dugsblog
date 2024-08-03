@@ -15,11 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const promises_1 = __importDefault(require("fs/promises"));
 const marked_1 = require("marked");
-const router = (0, express_1.Router)();
-const language = 'ja';
+const router = (0, express_1.Router)({ mergeParams: true });
 const markdownRootPath = './public/markdown';
 const categoryName = 'japanese';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { language } = req.params;
     const filenames = (yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
         return -1;
     });
@@ -36,16 +36,17 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
 			</div>`;
     }
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { language } = req.params;
     const param = req.params.param;
     const filenames = yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`);
     const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
     const filename = filenames[fileIndex];
     const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
     const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
 }));
 exports.default = router;
 //# sourceMappingURL=japaneseRouter.js.map
