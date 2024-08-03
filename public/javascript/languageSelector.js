@@ -1,4 +1,6 @@
-const languageElements = document.querySelectorAll('nav > ul > li > a');
+const languageElements = document.querySelectorAll('.language');
+
+console.log(languageElements);
 
 const languageSelector = (element) => {
 	let newURL = '';
