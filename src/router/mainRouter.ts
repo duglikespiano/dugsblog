@@ -1,8 +1,6 @@
 import { Router } from 'express';
 const router = Router({ mergeParams: true });
-type Language = {
-	language: string;
-};
+import { Language } from '../common/types';
 
 router.get('/', (req, res) => {
 	const { language } = req.params as Language;

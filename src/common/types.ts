@@ -5,3 +5,7 @@ export class FsError extends Error {
 		this.errno = errno;
 	}
 }
+
+export type Language = {
+	language: string;
+};

@@ -1,15 +1,12 @@
 import { Router } from 'express';
 import fs from 'fs/promises';
 import { marked } from 'marked';
+import { Language } from '../common/types';
 
 const router = Router({ mergeParams: true });
 
 const markdownRootPath = './public/markdown';
 const categoryName = 'japanese';
-
-type Language = {
-	language: string;
-};
 
 router.get('/', async (req, res) => {
 	const { language } = req.params as Language;
