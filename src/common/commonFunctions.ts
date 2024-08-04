@@ -1,3 +1,7 @@
+import fs from 'fs/promises';
+import { marked } from 'marked';
+import { markdownRootPath } from '../common/commonVariables';
+
 const convertDate = (date: string, language: string) => {
 	const sourceDate = date.split('-');
 	if (language === 'ko') {
@@ -46,4 +50,33 @@ export const capitalizeText = (string: string): string => {
 		convertedStringArray.push(convertedWordArray.join(''));
 	});
 	return convertedStringArray.join(' ');
+};
+
+export const readMarkdownsList = async (language: string, categoryName: string) => {
+	const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
+		return -1;
+	});
+	let data = '';
+	filenames.sort(function (a, b) {
+		return 1;
+	});
+	for (let element of filenames) {
+		const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${element}`, 'utf8');
+		const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
+		const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
+		data += `
+			<li class="article" data-date=${date}>
+				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+			</li>`;
+	}
+	return data;
+};
+
+export const readOneMarkdown = async (language: string, categoryName: string, param: string) => {
+	const filenames = await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`);
+	const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
+	const filename = filenames[fileIndex];
+	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
+	const data = await marked.parse(markdown);
+	return data;
 };
