@@ -71,17 +71,7 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 	}
 	data += '</ul>';
 	if (data === '<ul class="articles"></ul>') {
-		switch (language) {
-			case 'en':
-				data = `<div class="no-data">${noDataMessage.en}</div>`;
-				break;
-			case 'ko':
-				data = `<div class="no-data">${noDataMessage.ko}</div>`;
-				break;
-			case 'ja':
-				data = `<div class="no-data">${noDataMessage.ja}</div>`;
-				break;
-		}
+		data = `<div class="no-data">${noDataMessage[language]}</div>`;
 	}
 	return data;
 };

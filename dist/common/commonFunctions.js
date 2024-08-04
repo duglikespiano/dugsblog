@@ -98,17 +98,7 @@ const readMarkdownsList = (language, categoryName) => __awaiter(void 0, void 0, 
     }
     data += '</ul>';
     if (data === '<ul class="articles"></ul>') {
-        switch (language) {
-            case 'en':
-                data = `<div class="no-data">${commonVariables_1.noDataMessage.en}</div>`;
-                break;
-            case 'ko':
-                data = `<div class="no-data">${commonVariables_1.noDataMessage.ko}</div>`;
-                break;
-            case 'ja':
-                data = `<div class="no-data">${commonVariables_1.noDataMessage.ja}</div>`;
-                break;
-        }
+        data = `<div class="no-data">${commonVariables_1.noDataMessage[language]}</div>`;
     }
     return data;
 });
