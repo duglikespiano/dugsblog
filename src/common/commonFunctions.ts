@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import { marked } from 'marked';
-import { markdownRootPath } from '../common/commonVariables';
+import { markdownRootPath, noDataMessage } from '../common/commonVariables';
 
 const convertDate = (date: string, language: string) => {
 	const sourceDate = date.split('-');
@@ -56,7 +56,7 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 	const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
 		return -1;
 	});
-	let data = '';
+	let data = '<ul class="articles">';
 	filenames.sort(function (a, b) {
 		return 1;
 	});
@@ -68,6 +68,20 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 			<li class="article" data-date=${date}>
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
 			</li>`;
+	}
+	data += '</ul>';
+	if (data === '<ul class="articles"></ul>') {
+		switch (language) {
+			case 'en':
+				data = `<div class="no-data">${noDataMessage.en}</div>`;
+				break;
+			case 'ko':
+				data = `<div class="no-data">${noDataMessage.ko}</div>`;
+				break;
+			case 'ja':
+				data = `<div class="no-data">${noDataMessage.ja}</div>`;
+				break;
+		}
 	}
 	return data;
 };
