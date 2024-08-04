@@ -32,9 +32,9 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
         const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
         data += `
-			<div class="article" data-date=${date}>
+			<li class="article" data-date=${date}>
 				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
-			</div>`;
+			</li>`;
     }
     res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
 }));

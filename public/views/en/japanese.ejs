@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <%- include('../includes/head')%>
+    <link href='../../css/japanese.css' rel='stylesheet'>
     <%- include('../includes/title')%>
   </head>
   <body>
     <%- include('../includes/header')%>
     <section class='page-bottom'>
       <%- include('../includes/sidebar')%>
-      <main>
-        <%- data %>
+      <main id='japanese'>
+        <ul class='articles'>
+          <%- data %>
+        </ul>
       </main>
     </section>
   </body>
