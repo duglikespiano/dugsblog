@@ -8,44 +8,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const promises_1 = __importDefault(require("fs/promises"));
-const marked_1 = require("marked");
-const router = (0, express_1.Router)();
-const language = 'en';
-const markdownRootPath = './public/markdown';
+const commonFunctions_1 = require("../common/commonFunctions");
+const router = (0, express_1.Router)({ mergeParams: true });
 const categoryName = 'english';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const filenames = (yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
-        return -1;
-    });
-    let data = '';
-    filenames.sort(function (a, b) {
-        return 1;
-    });
-    for (let element of filenames) {
-        const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${element}`, 'utf8');
-        const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
-        const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
-        data += `
-			<div class="article" data-date=${date}>
-				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
-			</div>`;
-    }
-    res.render(`./${language}/japanese.ejs`, { data });
+    const { language } = req.params;
+    const data = yield (0, commonFunctions_1.readMarkdownsList)(language, categoryName);
+    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'English' });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const param = req.params.param;
-    const filenames = yield promises_1.default.readdir(`${markdownRootPath}/${language}/${categoryName}`);
-    const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
-    const filename = filenames[fileIndex];
-    const markdown = yield promises_1.default.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
-    const data = marked_1.marked.parse(markdown);
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    const { language } = req.params;
+    const { param } = req.params;
+    const data = yield (0, commonFunctions_1.readOneMarkdown)(language, categoryName, param);
+    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'English' });
 }));
 exports.default = router;
 //# sourceMappingURL=englishRouter.js.map
