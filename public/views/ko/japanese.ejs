@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('./includes/common')%>
-    <title>Dug's Blog</title>
+    <%- include('../includes/head')%>
+    <link href='../../css/japanese.css' rel='stylesheet'>
+    <%- include('../includes/title')%>
   </head>
   <body>
-    <%- include('./includes/header')%>
-    <section class='main-container'>
-      <%- include('./includes/sidebar')%>
-      <main><%-data%></main>
+    <%- include('../includes/header')%>
+    <section class='page-bottom'>
+      <%- include('../includes/sidebar')%>
+      <main id='japanese'>
+        <ul class='articles'>
+          <%- data %>
+        </ul>
+      </main>
     </section>
   </body>
 </html>
