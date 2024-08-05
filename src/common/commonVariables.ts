@@ -1,3 +1,4 @@
+export const languages = ['en', 'ko', 'ja'];
 export const markdownRootPath = './public/markdown';
 export const noDataMessage: { [key: string]: string } = {
 	en: 'No DATA',

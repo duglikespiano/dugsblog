@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.noDataMessage = exports.markdownRootPath = void 0;
+exports.noDataMessage = exports.markdownRootPath = exports.languages = void 0;
+exports.languages = ['en', 'ko', 'ja'];
 exports.markdownRootPath = './public/markdown';
 exports.noDataMessage = {
     en: 'No DATA',
