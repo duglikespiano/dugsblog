@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { getFilenamesFromS3 } from '../aws-s3';
 import { AWSS3ThumbnailFolderURL } from '../dotenv';
+import { Language } from '../common/types';
 
-const router = Router();
-
-const language = 'ja';
-const categoryName = 'dailylives';
+const router = Router({ mergeParams: true });
+const categoryName = 'days';
 
 router.get('/', async (req, res) => {
+	const { language } = req.params as Language;
 	const filenames = await getFilenamesFromS3();
 	let data = '';
 
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 		}
 	}
 
-	res.render(`./${language}/${categoryName}.ejs`, { data });
+	res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Days' });
 });
 
 router.get('/:param', async (req, res) => {});

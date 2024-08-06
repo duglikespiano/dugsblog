@@ -12,10 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const aws_s3_1 = require("../aws-s3");
 const dotenv_1 = require("../dotenv");
-const router = (0, express_1.Router)();
-const language = 'ja';
-const categoryName = 'dailylives';
+const router = (0, express_1.Router)({ mergeParams: true });
+const categoryName = 'days';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { language } = req.params;
     const filenames = yield (0, aws_s3_1.getFilenamesFromS3)();
     let data = '';
     if (filenames) {
@@ -28,7 +28,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 				</li>`;
         }
     }
-    res.render(`./${language}/${categoryName}.ejs`, { data });
+    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Days' });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () { }));
 exports.default = router;

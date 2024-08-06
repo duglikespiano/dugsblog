@@ -16,9 +16,9 @@ const articleCategory = [
 		},
 	},
 	{
-		url: 'dailylives',
+		url: 'days',
 		title: {
-			en: 'Dailylives',
+			en: 'Days',
 			ko: '일상',
 			ja: '日常',
 		},
