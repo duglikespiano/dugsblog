@@ -1,26 +1,28 @@
 <header class='page-top'>
   <nav>
     <h1>
-      <a href="/">
-        Dug's Blog
-      </a>
+      <% if(language === 'en') {%>
+      <a href="/en">Dug's Blog</a>
+      <%} else if(language === 'ko') {%>
+      <a href="/en">더그의 블로그</a>
+      <%} else {%>
+      <a href="/en">ダグのブログ</a>
+      <%}%>
     </h1>
+    
     <section class='languages-themes'>
       <ul class='languages'>
-
-        <% if (language === 'en'){%>
-        <li><a class='language'>한글</a></li>
-        <li><a class='language'>日本語</a></li>
-        <%} else if (language === 'ko'){%>
-        <li><a class='language'>en</a></li>
-        <li><a class='language'>日本語</a></li>
-        <%} else { %>
-        <li><a class='language'>en</a></li>
-        <li><a class='language'>한글</a></li>
-        <%}%>
-
+      <% if (language === 'en'){%>
+      <li><a class='language'>한글</a></li>
+      <li><a class='language'>日本語</a></li>
+      <%} else if (language === 'ko'){%>
+      <li><a class='language'>en</a></li>
+      <li><a class='language'>日本語</a></li>
+      <%} else { %>
+      <li><a class='language'>en</a></li>
+      <li><a class='language'>한글</a></li>
+      <%}%>
       </ul>
-
       <div class='themes'>
         <i class="fa-solid fa-sun"></i>
         <i class="fa-solid fa-moon"></i>
