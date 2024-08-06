@@ -2,7 +2,7 @@ const articleCategory = [
 	{
 		url: 'english',
 		title: {
-			en: 'english',
+			en: 'English',
 			ko: '영어',
 			ja: '英語',
 		},
@@ -10,7 +10,7 @@ const articleCategory = [
 	{
 		url: 'japanese',
 		title: {
-			en: 'japanese',
+			en: 'Japanese',
 			ko: '일본어',
 			ja: '日本語',
 		},
@@ -18,7 +18,7 @@ const articleCategory = [
 	{
 		url: 'dailylives',
 		title: {
-			en: 'dailylives',
+			en: 'Dailylives',
 			ko: '일상',
 			ja: '日常',
 		},
