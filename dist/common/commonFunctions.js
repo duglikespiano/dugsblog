@@ -93,7 +93,9 @@ const readMarkdownsList = (language, categoryName) => __awaiter(void 0, void 0, 
         const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
         data += `
 			<li class="article" data-date=${date}>
-				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+				<h3>
+					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+				</h3>
 			</li>`;
     }
     data += '</ul>';

@@ -66,7 +66,9 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 		const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
 		data += `
 			<li class="article" data-date=${date}>
-				<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+				<h3>
+					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+				</h3>
 			</li>`;
 	}
 	data += '</ul>';
