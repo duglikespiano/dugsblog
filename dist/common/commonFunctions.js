@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readOneMarkdown = exports.readMarkdownsList = exports.capitalizeText = void 0;
+exports.renderTemplate = exports.readOneMarkdown = exports.readMarkdownsList = exports.capitalizeText = void 0;
 const promises_1 = __importDefault(require("fs/promises"));
 const marked_1 = require("marked");
 const commonVariables_1 = require("../common/commonVariables");
@@ -114,4 +114,8 @@ const readOneMarkdown = (language, categoryName, param) => __awaiter(void 0, voi
     return data;
 });
 exports.readOneMarkdown = readOneMarkdown;
+const renderTemplate = (language, categoryName) => {
+    return `./${language}/${categoryName}.ejs`;
+};
+exports.renderTemplate = renderTemplate;
 //# sourceMappingURL=commonFunctions.js.map

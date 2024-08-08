@@ -86,3 +86,7 @@ export const readOneMarkdown = async (language: string, categoryName: string, pa
 	const data = await marked.parse(markdown);
 	return data;
 };
+
+export const renderTemplate = (language: string, categoryName: string) => {
+	return `./${language}/${categoryName}.ejs`;
+};

@@ -16,13 +16,15 @@ const categoryName = 'japanese';
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { language } = req.params;
     const data = yield (0, commonFunctions_1.readMarkdownsList)(language, categoryName);
-    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
+    const template = (0, commonFunctions_1.renderTemplate)(language, categoryName);
+    res.render(template, { data, language, title: 'Japanese' });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { language } = req.params;
     const { param } = req.params;
     const data = yield (0, commonFunctions_1.readOneMarkdown)(language, categoryName, param);
-    res.render(`./${language}/${categoryName}.ejs`, { data, language, title: 'Japanese' });
+    const template = (0, commonFunctions_1.renderTemplate)(language, categoryName);
+    res.render(template, { data, language, title: 'Japanese' });
 }));
 exports.default = router;
 //# sourceMappingURL=japaneseRouter.js.map
