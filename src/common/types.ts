@@ -9,3 +9,8 @@ export class FsError extends Error {
 export type Language = {
 	language: string;
 };
+
+export type FilenameWithNumber = {
+	name: string;
+	number: number;
+};

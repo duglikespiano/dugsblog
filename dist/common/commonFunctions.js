@@ -80,21 +80,25 @@ const capitalizeText = (string) => {
 };
 exports.capitalizeText = capitalizeText;
 const readMarkdownsList = (language, categoryName) => __awaiter(void 0, void 0, void 0, function* () {
-    const filenames = (yield promises_1.default.readdir(`${commonVariables_1.markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
-        return -1;
+    const filenames = yield promises_1.default.readdir(`${commonVariables_1.markdownRootPath}/${language}/${categoryName}`);
+    const filenamesWithNumber = filenames.map((item) => {
+        return {
+            name: item,
+            number: +item.split('_')[0],
+        };
+    });
+    filenamesWithNumber.sort((a, b) => {
+        return b.number - a.number;
     });
     let data = '<ul class="articles">';
-    filenames.sort(function (a, b) {
-        return 1;
-    });
-    for (let element of filenames) {
-        const markdown = yield promises_1.default.readFile(`${commonVariables_1.markdownRootPath}/${language}/${categoryName}/${element}`, 'utf8');
+    for (let element of filenamesWithNumber) {
+        const markdown = yield promises_1.default.readFile(`${commonVariables_1.markdownRootPath}/${language}/${categoryName}/${element.name}`, 'utf8');
         const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
-        const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
+        const linkTitle = element.name.split('_').slice(1).join(' ').replace('.md', '');
         data += `
 			<li class="article" data-date=${date}>
 				<h3>
-					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+					<a href="./japanese/${element.name.split('_')[0]}">${linkTitle}</a>
 				</h3>
 			</li>`;
     }

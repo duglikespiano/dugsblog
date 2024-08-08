@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import { marked } from 'marked';
 import { markdownRootPath, noDataMessage } from '../common/commonVariables';
+import { FilenameWithNumber } from '../common/types';
 
 const convertDate = (date: string, language: string) => {
 	const sourceDate = date.split('-');
@@ -53,21 +54,25 @@ export const capitalizeText = (string: string): string => {
 };
 
 export const readMarkdownsList = async (language: string, categoryName: string) => {
-	const filenames = (await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`)).sort(function (a, b) {
-		return -1;
+	const filenames = await fs.readdir(`${markdownRootPath}/${language}/${categoryName}`);
+	const filenamesWithNumber: FilenameWithNumber[] = filenames.map((item) => {
+		return {
+			name: item,
+			number: +item.split('_')[0],
+		};
+	});
+	filenamesWithNumber.sort((a, b) => {
+		return b.number - a.number;
 	});
 	let data = '<ul class="articles">';
-	filenames.sort(function (a, b) {
-		return 1;
-	});
-	for (let element of filenames) {
-		const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${element}`, 'utf8');
+	for (let element of filenamesWithNumber) {
+		const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${element.name}`, 'utf8');
 		const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
-		const linkTitle = element.split('_').slice(1).join(' ').replace('.md', '');
+		const linkTitle = element.name.split('_').slice(1).join(' ').replace('.md', '');
 		data += `
 			<li class="article" data-date=${date}>
 				<h3>
-					<a href="./japanese/${element.split('_')[0]}">${linkTitle}</a>
+					<a href="./japanese/${element.name.split('_')[0]}">${linkTitle}</a>
 				</h3>
 			</li>`;
 	}
