@@ -1,8 +1,8 @@
+const bodyElement = window.document.body;
 const languageElements = document.querySelectorAll('.language');
+const themeElements = document.querySelectorAll('.theme');
 
-console.log(languageElements);
-
-const languageSelector = (element) => {
+const switchLanguage = (element) => {
 	let newURL = '';
 	let URLArray = location.pathname.split('/');
 	if (element.innerText === '한글') {
@@ -14,12 +14,25 @@ const languageSelector = (element) => {
 	}
 	URLArray.slice(0, 1);
 	newURL = URLArray.join('/');
-
 	window.location = newURL;
+};
+
+const switchTheme = () => {
+	if (bodyElement.classList.contains('darkmode')) {
+		bodyElement.classList.remove('darkmode');
+	} else {
+		bodyElement.classList.add('darkmode');
+	}
 };
 
 languageElements.forEach((element) => {
 	element.addEventListener('click', () => {
-		languageSelector(element);
+		switchLanguage(element);
+	});
+});
+
+themeElements.forEach((element) => {
+	element.addEventListener('click', () => {
+		switchTheme();
 	});
 });

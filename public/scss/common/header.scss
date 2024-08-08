@@ -1,9 +1,8 @@
-@use '../common/variables.scss' as *;
+@use 'variables.scss' as *;
 
 header {
 	width: 100%;
 	height: $header-height;
-	background-color: $grey6;
 	border-bottom: 1px solid grey;
 
 	nav {
@@ -38,13 +37,13 @@ header {
 				cursor: pointer;
 			}
 			li {
-				a {
-					display: inline;
-				}
 				&:nth-of-type(1)::after {
 					content: '/';
 					margin-left: 5px;
 					margin-right: 5px;
+				}
+				a {
+					display: inline;
 				}
 			}
 		}
@@ -52,8 +51,13 @@ header {
 			font-size: 20px;
 			margin-right: 20px;
 			cursor: pointer;
-			i:nth-of-type(1) {
-				color: #fff;
+			i {
+				&:nth-of-type(1) {
+					color: $orange2;
+				}
+				&:nth-of-type(2) {
+					color: $black2;
+				}
 			}
 		}
 	}

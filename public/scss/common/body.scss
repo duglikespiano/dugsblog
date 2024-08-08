@@ -1,9 +1,30 @@
+@use 'variables' as *;
+
 body {
 	position: relative;
 	min-height: 100vh;
 	font-family: 'Roboto', sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
+	background-color: $grey4;
+	color: $navy2;
 	padding: 0;
 	margin: 0 auto;
+	&.darkmode {
+		background-color: $black1;
+		color: $grey4;
+		header {
+			background-color: $black2;
+			.languages-themes {
+				.themes {
+					i:nth-of-type(1) {
+						color: $grey4;
+					}
+					i:nth-of-type(2) {
+						color: $orange2;
+					}
+				}
+			}
+		}
+	}
 }
