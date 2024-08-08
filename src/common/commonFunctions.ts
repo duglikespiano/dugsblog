@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import { marked } from 'marked';
-import { markdownRootPath, noDataMessage } from '../common/commonVariables';
-import { FilenameWithNumber } from '../common/types';
+import { markdownRootPath, noDataMessage, templatesTitles } from '../common/commonVariables';
+import { Languages, FilenameWithNumber } from '../common/types';
 
 const convertDate = (date: string, language: string) => {
 	const sourceDate = date.split('-');
@@ -94,4 +94,8 @@ export const readOneMarkdown = async (language: string, categoryName: string, pa
 
 export const renderTemplate = (language: string, categoryName: string) => {
 	return `./${language}/${categoryName}.ejs`;
+};
+
+export const exportTitle = (categoryName: keyof typeof templatesTitles, language: Languages): string => {
+	return templatesTitles[categoryName][language];
 };
