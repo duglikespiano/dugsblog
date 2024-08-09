@@ -88,7 +88,9 @@ export const readOneMarkdown = async (language: string, categoryName: string, pa
 	const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
 	const filename = filenames[fileIndex];
 	const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
-	const data = await marked.parse(markdown);
+	let data = '<section class="content">';
+	data += await marked.parse(markdown);
+	data += '</section>';
 	return data;
 };
 

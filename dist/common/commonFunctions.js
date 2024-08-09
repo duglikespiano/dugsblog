@@ -114,7 +114,9 @@ const readOneMarkdown = (language, categoryName, param) => __awaiter(void 0, voi
     const fileIndex = +filenames.filter((filename) => filename.split('_')[0] === param)[0].split('_')[0] - 1;
     const filename = filenames[fileIndex];
     const markdown = yield promises_1.default.readFile(`${commonVariables_1.markdownRootPath}/${language}/${categoryName}/${filename}`, 'utf8');
-    const data = yield marked_1.marked.parse(markdown);
+    let data = '<section class="content">';
+    data += yield marked_1.marked.parse(markdown);
+    data += '</section>';
     return data;
 });
 exports.readOneMarkdown = readOneMarkdown;
