@@ -2,7 +2,7 @@
 
 .page-bottom {
 	display: grid;
-	grid-template-columns: 20rem auto;
+	grid-template-columns: 18rem auto;
 	min-height: calc(100vh - $header-height);
 	.sidebar {
 		border-right: 1px solid grey;

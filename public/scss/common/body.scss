@@ -26,5 +26,12 @@ body {
 				}
 			}
 		}
+		#japanese {
+			.articles {
+				.article {
+					border: 0.2rem solid $grey4;
+				}
+			}
+		}
 	}
 }
