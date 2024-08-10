@@ -67,10 +67,18 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 	let data = '<ul class="articles">';
 	for (let element of filenamesWithNumber) {
 		const markdown = await fs.readFile(`${markdownRootPath}/${language}/${categoryName}/${element.name}`, 'utf8');
-		const date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
+		let date;
+		if (language === 'en') {
+			date = `${markdown.slice(markdown.search('Date'), markdown.search('Date') + 18)}`;
+		} else if (language === 'ko') {
+			date = `${markdown.slice(markdown.search('작성일'), markdown.search('작성일') + 16)}`;
+		} else if (language === 'ja') {
+			date = `${markdown.slice(markdown.search('作成日'), markdown.search('作成日') + 16)}`;
+		}
+		console.log(date);
 		const linkTitle = element.name.split('_').slice(1).join(' ').replace('.md', '');
 		data += `
-			<li class="article" data-date=${date}>
+			<li class="article" data-date="${date}">
 				<h3>
 					<a href="./japanese/${element.name.split('_')[0]}">${linkTitle}</a>
 				</h3>
