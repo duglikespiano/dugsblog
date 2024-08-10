@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+@mixin xxl {
+	@media only screen and (min-width: $maxwidth-extra-extra-large) {
+		@content;
+	}
+}
+@mixin xl {
+	@media only screen and (max-width: $maxwidth-extra-extra-large) and (min-width: $maxwidth-extra-large) {
+		@content;
+	}
+}
+@mixin l {
+	@media only screen and (max-width: $maxwidth-extra-large) and (min-width: $maxwidth-large) {
+		@content;
+	}
+}
+@mixin m {
+	@media only screen and (max-width: $maxwidth-large) and (min-width: $maxwidth-medium) {
+		@content;
+	}
+}
+@mixin s {
+	@media only screen and (max-width: $maxwidth-medium) and (min-width: $maxwidth-small) {
+		@content;
+	}
+}
+@mixin xs {
+	@media only screen and (max-width: $maxwidth-small) and (min-width: $maxwidth-extra-small) {
+		@content;
+	}
+}
+@mixin xs {
+	@media only screen and (max-width: $maxwidth-extra-small) {
+		@content;
+	}
+}
+
+@function pcvw($px) {
+	@return calc(#{$px} * (100vw / #{1360}));
+}
+
+@function vw($px) {
+	@return calc(#{$px} * (100vw / #{375}));
+}
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin preventClick() {
+	user-select: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
