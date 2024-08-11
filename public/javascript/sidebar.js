@@ -34,6 +34,7 @@ const createCategoryElements = (category, language) => {
 	const linkURL = `${currentURL.split('/')[0]}/${currentURL.split('/')[1]}/${category.url}`;
 	linkElement.innerText = category.title[language];
 	linkElement.setAttribute('href', linkURL);
+	categoryElement.classList.add('category');
 	categoryElement.appendChild(linkElement);
 	categoriesElement.appendChild(categoryElement);
 };
