@@ -10,6 +10,7 @@ body {
 	color: $navy2;
 	padding: 0;
 	margin: 0 auto;
+	transition: background-color 0.5s, color 0.5s;
 	&.darkmode {
 		background-color: $black1;
 		color: $grey4;
@@ -58,6 +59,27 @@ body {
 					}
 					h5 {
 						color: $orange2;
+					}
+				}
+			}
+		}
+		.hamburger {
+			.lines {
+				.line {
+					background-color: $grey4;
+				}
+			}
+		}
+		.modal-hamburger {
+			.languages-themes {
+				.themes {
+					i {
+						&:nth-of-type(1) {
+							color: $grey4;
+						}
+						&:nth-of-type(2) {
+							color: $orange2;
+						}
 					}
 				}
 			}

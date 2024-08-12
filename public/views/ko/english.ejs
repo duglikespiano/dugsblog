@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <%- include('../includes/head')%>
-    <link href='../../css/english.css' rel='stylesheet'>
-    <%- include('../includes/title')%>
-  </head>
-  <body>
-    <%- include('../includes/header')%>
-    <section class='page-bottom'>
-      <%- include('../includes/sidebar')%>
-      <main id='english'>
-        <%- data %>
-      </main>
-    </section>
-  </body>
+	<head>
+		<%- include('../includes/head')%>
+		<link href="../../css/english.css" rel="stylesheet" />
+		<%- include('../includes/title')%>
+	</head>
+	<body>
+		<%- include('../includes/header')%><%- include('../includes/modal-hamburger')%>
+		<section class="page-bottom">
+			<%- include('../includes/sidebar')%>
+			<main id="english"><%- data %></main>
+		</section>
+	</body>
 </html>

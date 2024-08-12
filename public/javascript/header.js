@@ -1,6 +1,8 @@
 const bodyElement = window.document.body;
 const languageElements = document.querySelectorAll('.language');
 const themeElements = document.querySelectorAll('.theme');
+const hamburgerElement = document.querySelector('.hamburger');
+const modalHamburgerElement = document.querySelector('.modal-hamburger');
 
 const switchLanguage = (element) => {
 	let newURL = '';
@@ -35,4 +37,9 @@ themeElements.forEach((element) => {
 	element.addEventListener('click', () => {
 		switchTheme();
 	});
+});
+
+hamburgerElement.addEventListener('click', () => {
+	hamburgerElement.classList.toggle('active');
+	modalHamburgerElement.classList.toggle('active');
 });

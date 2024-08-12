@@ -1,0 +1,21 @@
+<section class="modal-hamburger">
+	<ul class="categories"></ul>
+	<div class="languages-themes">
+		<ul class="languages">
+			<% if (language === 'en'){%>
+			<li><a class="language">한글</a></li>
+			<li><a class="language">日本語</a></li>
+			<%} else if (language === 'ko'){%>
+			<li><a class="language">English</a></li>
+			<li><a class="language">日本語</a></li>
+			<%} else { %>
+			<li><a class="language">English</a></li>
+			<li><a class="language">한글</a></li>
+			<%}%>
+		</ul>
+		<div class="themes">
+			<i class="fa-solid fa-sun theme lightmode"></i>
+			<i class="fa-solid fa-moon theme darkmode"></i>
+		</div>
+	</div>
+</section>

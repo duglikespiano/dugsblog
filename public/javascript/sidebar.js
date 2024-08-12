@@ -1,6 +1,5 @@
 const currentURL = location.pathname;
-const categoriesElement = document.querySelector('.categories');
-const categoryElements = document.querySelectorAll('.category');
+const categoriesElements = document.querySelectorAll('.categories');
 const language = currentURL.split('/')[1];
 
 const articleCategory = [
@@ -30,7 +29,7 @@ const articleCategory = [
 	},
 ];
 
-const createCategoryElements = (category, language) => {
+const createCategoryElements = (categoriesElement, category, language) => {
 	const categoryElement = document.createElement('h2');
 	const linkElement = document.createElement('a');
 	const linkURL = `${currentURL.split('/')[0]}/${currentURL.split('/')[1]}/${category.url}`;
@@ -48,7 +47,9 @@ const updateActiveCategory = (DOM, category) => {
 	}
 };
 
-articleCategory.forEach((category) => {
-	const categoryElement = createCategoryElements(category, language);
-	updateActiveCategory(categoryElement, category);
+categoriesElements.forEach((categoriesElement) => {
+	articleCategory.forEach((category) => {
+		const categoryElement = createCategoryElements(categoriesElement, category, language);
+		updateActiveCategory(categoryElement, category);
+	});
 });

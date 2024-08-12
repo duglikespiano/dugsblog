@@ -1,33 +1,41 @@
-<header class='page-top'>
-  <nav>
-    <div class="wrapper">
-      <h1 class='logo'>
-        <% if(language === 'en') {%>
-        <a href="/en">Dug's Blog</a>
-        <%} else if(language === 'ko') {%>
-        <a href="/ko">더그의 블로그</a>
-        <%} else {%>
-        <a href="/ja">ダグのブログ</a>
-        <%}%>
-    </h1>
-    <section class='languages-themes'>
-      <ul class='languages'>
-      <% if (language === 'en'){%>
-        <li><a class='language'>한글</a></li>
-        <li><a class='language'>日本語</a></li>
-        <%} else if (language === 'ko'){%>
-        <li><a class='language'>English</a></li>
-        <li><a class='language'>日本語</a></li>
-        <%} else { %>
-        <li><a class='language'>English</a></li>
-        <li><a class='language'>한글</a></li>
-        <%}%>
-      </ul>
-      <div class='themes'>
-        <i class="fa-solid fa-sun theme lightmode"></i>
-        <i class="fa-solid fa-moon theme darkmode"></i>
-      </div>
-    </section>
-  </div>
-  </nav>
+<header class="page-top">
+	<nav>
+		<section class="wrapper">
+			<h1 class="logo">
+				<% if(language === 'en') {%>
+				<a href="/en">Dug's Blog</a>
+				<%} else if(language === 'ko') {%>
+				<a href="/ko">더그의 블로그</a>
+				<%} else {%>
+				<a href="/ja">ダグのブログ</a>
+				<%}%>
+			</h1>
+			<div class="languages-themes">
+				<ul class="languages">
+					<% if (language === 'en'){%>
+					<li><a class="language">한글</a></li>
+					<li><a class="language">日本語</a></li>
+					<%} else if (language === 'ko'){%>
+					<li><a class="language">English</a></li>
+					<li><a class="language">日本語</a></li>
+					<%} else { %>
+					<li><a class="language">English</a></li>
+					<li><a class="language">한글</a></li>
+					<%}%>
+				</ul>
+				<div class="themes">
+					<i class="fa-solid fa-sun theme lightmode"></i>
+					<i class="fa-solid fa-moon theme darkmode"></i>
+				</div>
+			</div>
+			<div class="hamburger">
+				<div class="lines">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</section>
+	</nav>
 </header>

@@ -1,10 +1,17 @@
 @use '../common/variables.scss' as *;
+@use 'functions' as *;
 
 .page-bottom {
 	display: grid;
 	grid-template-columns: 18rem auto;
 	min-height: calc(100vh - $header-height);
+	@include m() {
+		grid-template-columns: auto;
+	}
 	.sidebar {
+		@include m() {
+			display: none;
+		}
 		border-right: 1px solid grey;
 		padding-top: 2rem;
 		.categories {
