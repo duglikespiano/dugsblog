@@ -1,8 +1,9 @@
-const bodyElement = window.document.body;
+const bodyElement = document.body;
 const languageElements = document.querySelectorAll('.language');
 const themeElements = document.querySelectorAll('.theme');
 const hamburgerElement = document.querySelector('.hamburger');
 const modalHamburgerElement = document.querySelector('.modal-hamburger');
+const localStorageDarkmodeKeyName = 'dugsblog-darkmode';
 
 const switchLanguage = (element) => {
 	let newURL = '';
@@ -16,14 +17,18 @@ const switchLanguage = (element) => {
 	}
 	URLArray.slice(0, 1);
 	newURL = URLArray.join('/');
-	window.location = newURL;
+	location = newURL;
 };
 
 const switchTheme = () => {
 	if (bodyElement.classList.contains('darkmode')) {
 		bodyElement.classList.remove('darkmode');
+		localStorage.setItem(localStorageDarkmodeKeyName, 'false');
+		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
 	} else {
 		bodyElement.classList.add('darkmode');
+		localStorage.setItem(localStorageDarkmodeKeyName, 'true');
+		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
 	}
 };
 
@@ -43,3 +48,15 @@ hamburgerElement.addEventListener('click', () => {
 	hamburgerElement.classList.toggle('active');
 	modalHamburgerElement.classList.toggle('active');
 });
+
+if (!localStorage.getItem(localStorageDarkmodeKeyName)) {
+	if (matchMedia('(prefers-color-scheme: dark)').matches) {
+		bodyElement.classList.add('darkmode');
+	}
+} else if (localStorage.getItem(localStorageDarkmodeKeyName)) {
+	if (localStorage.getItem(localStorageDarkmodeKeyName) === 'false') {
+		bodyElement.classList.remove('darkmode');
+	} else if (localStorage.getItem(localStorageDarkmodeKeyName) === 'true') {
+		bodyElement.classList.add('darkmode');
+	}
+}
