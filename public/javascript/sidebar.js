@@ -1,3 +1,8 @@
+const currentURL = location.pathname;
+const categoriesElement = document.querySelector('.categories');
+const categoryElements = document.querySelectorAll('.category');
+const language = currentURL.split('/')[1];
+
 const articleCategory = [
 	{
 		url: 'english',
@@ -25,9 +30,6 @@ const articleCategory = [
 	},
 ];
 
-const currentURL = location.pathname;
-const categoriesElement = document.querySelector('.categories');
-
 const createCategoryElements = (category, language) => {
 	const categoryElement = document.createElement('h2');
 	const linkElement = document.createElement('a');
@@ -37,21 +39,16 @@ const createCategoryElements = (category, language) => {
 	categoryElement.classList.add('category');
 	categoryElement.appendChild(linkElement);
 	categoriesElement.appendChild(categoryElement);
+	return categoryElement;
 };
 
-if (currentURL.split('/')[1] === 'en') {
-	const language = 'en';
-	articleCategory.forEach((category) => {
-		createCategoryElements(category, language);
-	});
-} else if (currentURL.split('/')[1] === 'ko') {
-	const language = 'ko';
-	articleCategory.forEach((category) => {
-		createCategoryElements(category, language);
-	});
-} else {
-	const language = 'ja';
-	articleCategory.forEach((category) => {
-		createCategoryElements(category, language);
-	});
-}
+const updateActiveCategory = (DOM, category) => {
+	if (location.pathname.split('/')[2] === category.title['en'].toLocaleLowerCase()) {
+		DOM.classList.add('active');
+	}
+};
+
+articleCategory.forEach((category) => {
+	const categoryElement = createCategoryElements(category, language);
+	updateActiveCategory(categoryElement, category);
+});

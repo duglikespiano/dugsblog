@@ -15,6 +15,13 @@ body {
 		color: $grey4;
 		header {
 			background-color: $black2;
+			nav {
+				.wrapper {
+					h1.logo {
+						color: $orange2;
+					}
+				}
+			}
 			.languages-themes {
 				.themes {
 					i:nth-of-type(1) {
@@ -26,21 +33,32 @@ body {
 				}
 			}
 		}
-		#japanese {
-			.articles {
-				.article {
-					border: 0.2rem solid $grey4;
+		.page-bottom {
+			.sidebar {
+				.categories {
+					h2.category {
+						&.active {
+							color: $orange2;
+						}
+					}
 				}
 			}
-			.content {
-				h3 {
-					color: $orange2;
+			#japanese {
+				.articles {
+					.article {
+						border-color: $grey4;
+					}
 				}
-				h4 {
-					color: $orange2;
-				}
-				h5 {
-					color: $orange2;
+				.content {
+					h3 {
+						color: $orange2;
+					}
+					h4 {
+						color: $orange2;
+					}
+					h5 {
+						color: $orange2;
+					}
 				}
 			}
 		}

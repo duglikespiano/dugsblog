@@ -19,6 +19,10 @@
 				a {
 					padding-left: 2rem;
 				}
+				&.active {
+					color: $navy4;
+					font-weight: bold;
+				}
 			}
 		}
 	}

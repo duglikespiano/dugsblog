@@ -75,7 +75,6 @@ export const readMarkdownsList = async (language: string, categoryName: string) 
 		} else if (language === 'ja') {
 			date = `${markdown.slice(markdown.search('作成日'), markdown.search('作成日') + 16)}`;
 		}
-		console.log(date);
 		const linkTitle = element.name.split('_').slice(1).join(' ').replace('.md', '');
 		data += `
 			<li class="article" data-date="${date}">

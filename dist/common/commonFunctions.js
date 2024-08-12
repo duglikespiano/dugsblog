@@ -103,7 +103,6 @@ const readMarkdownsList = (language, categoryName) => __awaiter(void 0, void 0, 
         else if (language === 'ja') {
             date = `${markdown.slice(markdown.search('作成日'), markdown.search('作成日') + 16)}`;
         }
-        console.log(date);
         const linkTitle = element.name.split('_').slice(1).join(' ').replace('.md', '');
         data += `
 			<li class="article" data-date="${date}">
