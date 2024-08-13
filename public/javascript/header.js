@@ -25,10 +25,16 @@ const switchTheme = () => {
 		bodyElement.classList.remove('darkmode');
 		localStorage.setItem(localStorageDarkmodeKeyName, 'false');
 		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
+		setTimeout(() => {
+			bodyElement.style.transition = 'none';
+		}, 750);
 	} else {
 		bodyElement.classList.add('darkmode');
 		localStorage.setItem(localStorageDarkmodeKeyName, 'true');
 		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
+		setTimeout(() => {
+			bodyElement.style.transition = 'none';
+		}, 750);
 	}
 };
 
