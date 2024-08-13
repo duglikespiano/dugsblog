@@ -1,1 +1,4 @@
-<title>Dug's Blog<% if (title != ''){%> - <%- title %><%} else{%><%} %></title>
+<title>
+	<% if(language === 'en') {%> Dug's Blog <%} else if(language === 'ko') {%> 더그의 블로그 <%} else {%> ダグのブログ <%}%> <% if
+	(title != ''){%> - <%- title %><%} else{%><%} %>
+</title>
