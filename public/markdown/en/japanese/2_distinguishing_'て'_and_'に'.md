@@ -11,7 +11,7 @@ Date : Feb 04 2024<br>
 #### The way to distinguish 'て' and 'に'
 
 When you exchange ’〜て’ into 'に',<br>
-If it means only 'its existence', It's **'に'**、 if it also means 'its movement', It's **'で'**.<br>
+If it means only 'its existence', It's 'に'、 if it also means 'its movement', It's 'で'.<br>
 
 ---
 
