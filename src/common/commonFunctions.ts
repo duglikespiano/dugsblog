@@ -1,7 +1,13 @@
 import fs from 'fs/promises';
 import { marked } from 'marked';
-import { markdownRootPath, noDataMessage, templatesTitles } from '../common/commonVariables';
-import { Languages, FilenameWithNumber } from '../common/types';
+import {
+	pageRootUrl,
+	markdownRootPath,
+	noDataMessage,
+	templatesTitles,
+	ogpInformationWithLanguage,
+} from '../common/commonVariables';
+import { LanguagesCode, FilenameWithNumber } from '../common/types';
 
 const convertDate = (date: string, language: string) => {
 	const sourceDate = date.split('-');
@@ -105,6 +111,11 @@ export const renderTemplate = (language: string, categoryName: string) => {
 	return `./${language}/${categoryName}.ejs`;
 };
 
-export const exportTitle = (categoryName: keyof typeof templatesTitles, language: Languages): string => {
+export const exportTitle = (categoryName: keyof typeof templatesTitles, language: LanguagesCode): string => {
 	return templatesTitles[categoryName][language];
+};
+
+export const generateOGPinfomation = (language: LanguagesCode, Url: string) => {
+	ogpInformationWithLanguage[language].url = `${pageRootUrl}${Url}`;
+	return ogpInformationWithLanguage[language];
 };

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.exportTitle = exports.renderTemplate = exports.readOneMarkdown = exports.readMarkdownsList = exports.capitalizeText = void 0;
+exports.generateOGPinfomation = exports.exportTitle = exports.renderTemplate = exports.readOneMarkdown = exports.readMarkdownsList = exports.capitalizeText = void 0;
 const promises_1 = __importDefault(require("fs/promises"));
 const marked_1 = require("marked");
 const commonVariables_1 = require("../common/commonVariables");
@@ -137,4 +137,9 @@ const exportTitle = (categoryName, language) => {
     return commonVariables_1.templatesTitles[categoryName][language];
 };
 exports.exportTitle = exportTitle;
+const generateOGPinfomation = (language, Url) => {
+    commonVariables_1.ogpInformationWithLanguage[language].url = `${commonVariables_1.pageRootUrl}${Url}`;
+    return commonVariables_1.ogpInformationWithLanguage[language];
+};
+exports.generateOGPinfomation = generateOGPinfomation;
 //# sourceMappingURL=commonFunctions.js.map

@@ -1,3 +1,7 @@
+import { LanguagesCode } from './types';
+
+export const pageRootUrl = 'https://dugsblog-production.up.railway.app';
+
 export const languages = ['en', 'ko', 'ja'];
 export const markdownRootPath = './public/markdown';
 export const noDataMessage: { [key: string]: string } = {
@@ -6,9 +10,12 @@ export const noDataMessage: { [key: string]: string } = {
 	ja: 'データ無し',
 };
 
-type LanguageCode = 'en' | 'ko' | 'ja';
-
-export const templatesTitles: { [key: string]: { [key in LanguageCode]: string } } = {
+export const templatesTitles: { [key: string]: { [key in LanguagesCode]: string } } = {
+	main: {
+		en: '',
+		ko: '',
+		ja: '',
+	},
 	english: {
 		en: 'English',
 		ko: '영어',
@@ -23,5 +30,26 @@ export const templatesTitles: { [key: string]: { [key in LanguageCode]: string }
 		en: 'Days',
 		ko: '일상',
 		ja: '日常',
+	},
+};
+
+export const ogpInformationWithLanguage = {
+	en: {
+		locale: 'en_US',
+		title: "Dug's Blog",
+		description: 'A Blog which Dug organizes his thoughts, studyings',
+		url: '',
+	},
+	ko: {
+		locale: 'ko_KO',
+		title: '더그의 블로그',
+		description: '더그의 생각과 공부내용을 정리하는 블로그',
+		url: '',
+	},
+	ja: {
+		locale: 'ja_JP',
+		title: 'ダグのブログ',
+		description: 'ダグの考えと勉強内容を整理して置くブログ',
+		url: '',
 	},
 };

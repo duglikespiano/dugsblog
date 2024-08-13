@@ -19,6 +19,9 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { language } = req.params;
     const filenames = yield (0, aws_s3_1.getFilenamesFromS3)();
     const template = (0, commonFunctions_1.renderTemplate)(language, categoryName);
+    const url = req.baseUrl;
+    const title = (0, commonFunctions_1.exportTitle)(categoryName, language);
+    const ogpInformation = (0, commonFunctions_1.generateOGPinfomation)(language, url);
     let data = '';
     if (filenames) {
         for (let element of filenames) {
@@ -30,7 +33,7 @@ router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 				</li>`;
         }
     }
-    res.render(template, { data, language, title: 'Days' });
+    res.render(template, { data, language, title, ogpInformation });
 }));
 router.get('/:param', (req, res) => __awaiter(void 0, void 0, void 0, function* () { }));
 exports.default = router;

@@ -10,7 +10,7 @@ export type Language = {
 	language: string;
 };
 
-export type Languages = 'en' | 'ko' | 'ja';
+export type LanguagesCode = 'en' | 'ko' | 'ja';
 
 export type FilenameWithNumber = {
 	name: string;
