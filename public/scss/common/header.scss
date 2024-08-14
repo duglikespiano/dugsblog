@@ -41,6 +41,7 @@ header {
 			display: flex;
 			font-size: 2.5rem;
 			.language {
+				text-wrap: nowrap;
 				cursor: pointer;
 			}
 			li {
@@ -56,6 +57,7 @@ header {
 		}
 		.themes {
 			font-size: 2.5rem;
+			text-wrap: nowrap;
 			margin-right: 2rem;
 			cursor: pointer;
 			i {

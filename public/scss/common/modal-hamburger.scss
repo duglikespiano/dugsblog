@@ -52,6 +52,7 @@
 			font-size: 3rem;
 			color: $grey4;
 			.language {
+				text-wrap: nowrap;
 				cursor: pointer;
 			}
 			li {
@@ -66,6 +67,7 @@
 			}
 		}
 		.themes {
+			text-wrap: nowrap;
 			font-size: 3rem;
 			cursor: pointer;
 			i {
