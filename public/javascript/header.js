@@ -4,6 +4,7 @@ const themeElements = document.querySelectorAll('.theme');
 const hamburgerElement = document.querySelector('.hamburger');
 const modalHamburgerElement = document.querySelector('.modal-hamburger');
 const localStorageDarkmodeKeyName = 'dugsblog-darkmode';
+let transitionSetTimeout;
 
 const switchLanguage = (element) => {
 	let newURL = '';
@@ -25,16 +26,22 @@ const switchTheme = () => {
 		bodyElement.classList.remove('darkmode');
 		localStorage.setItem(localStorageDarkmodeKeyName, 'false');
 		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
-		setTimeout(() => {
+		if (transitionSetTimeout) {
+			clearTimeout(transitionSetTimeout);
+		}
+		transitionSetTimeout = setTimeout(() => {
 			bodyElement.style.transition = 'none';
-		}, 750);
+		}, 500);
 	} else {
 		bodyElement.classList.add('darkmode');
 		localStorage.setItem(localStorageDarkmodeKeyName, 'true');
 		bodyElement.style.transition = 'background-color 0.5s, color 0.5s';
+		if (transitionSetTimeout) {
+			clearTimeout(transitionSetTimeout);
+		}
 		setTimeout(() => {
 			bodyElement.style.transition = 'none';
-		}, 750);
+		}, 500);
 	}
 };
 
