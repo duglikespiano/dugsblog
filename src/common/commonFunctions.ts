@@ -115,7 +115,7 @@ export const exportTitle = (categoryName: keyof typeof templatesTitles, language
 	return templatesTitles[categoryName][language];
 };
 
-export const generateOGPinfomation = (language: LanguagesCode, Url: string) => {
-	ogpInformationWithLanguage[language].url = `${pageRootUrl}${Url}`;
+export const generateOGPinfomation = (language: LanguagesCode, url: string) => {
+	ogpInformationWithLanguage[language].url = `${pageRootUrl}${url}`;
 	return ogpInformationWithLanguage[language];
 };

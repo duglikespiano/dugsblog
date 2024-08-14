@@ -137,8 +137,8 @@ const exportTitle = (categoryName, language) => {
     return commonVariables_1.templatesTitles[categoryName][language];
 };
 exports.exportTitle = exportTitle;
-const generateOGPinfomation = (language, Url) => {
-    commonVariables_1.ogpInformationWithLanguage[language].url = `${commonVariables_1.pageRootUrl}${Url}`;
+const generateOGPinfomation = (language, url) => {
+    commonVariables_1.ogpInformationWithLanguage[language].url = `${commonVariables_1.pageRootUrl}${url}`;
     return commonVariables_1.ogpInformationWithLanguage[language];
 };
 exports.generateOGPinfomation = generateOGPinfomation;

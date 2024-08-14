@@ -7,13 +7,13 @@ const commonFunctions_1 = require("../common/commonFunctions");
 const categoryName = 'main';
 router.get('/', (req, res) => {
     const { language } = req.params;
-    const url = req.baseUrl;
-    const title = (0, commonFunctions_1.exportTitle)(categoryName, language);
-    const ogpInformation = (0, commonFunctions_1.generateOGPinfomation)(language, url);
     if (language === 'favicon.ico') {
         return;
     }
-    else if (commonVariables_1.languages.findIndex((item) => item === language) > -1) {
+    if (commonVariables_1.languages.findIndex((item) => item === language) > -1) {
+        const url = req.baseUrl;
+        const title = (0, commonFunctions_1.exportTitle)(categoryName, language);
+        const ogpInformation = (0, commonFunctions_1.generateOGPinfomation)(language, url);
         res.render(`./${language}/main.ejs`, { title, language, ogpInformation });
     }
     else {
