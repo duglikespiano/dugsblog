@@ -16,8 +16,9 @@
 
 - Project title : dugsblog
 - URL : https://dugsblog-production.up.railway.app
-- Period : Feb 02 2024 - In progress
+- Period : Feb 02 2024 - Sep 06 2024
 - Member(s) : Dug Park
+- Remark : will be merged into Dug's Works
 - Tech stack : </br>
   <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">

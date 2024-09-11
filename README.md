@@ -16,8 +16,9 @@
 
 - 프로젝트명 : dugsblog
 - URL : https://dugsblog-production.up.railway.app
-- 기간 : 2024.02.02 - 진행중
+- 기간 : 2024.02.02 - 2024.09.06(중지)
 - 인원 : 1인
+- 비고 : Dug's Works와 통합예정
 - 기술스택 : </br>
   <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
